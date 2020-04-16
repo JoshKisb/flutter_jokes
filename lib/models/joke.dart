@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Joke {
   int id;
   String type;
@@ -7,8 +9,8 @@ class Joke {
   Joke({
     this.id,
     this.type,
-    this.setup,
-    this.punchline,
+    @required this.setup,
+    @required this.punchline,
   });
 
   factory Joke.fromJson(Map<String, dynamic> json) {

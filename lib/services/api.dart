@@ -5,7 +5,6 @@ import 'package:jokes_app/models/joke.dart';
 import 'package:jokes_app/utils/urls.dart';
 
 class ApiService {
-  
   Future<Joke> fetchRandomJoke() async {
     try {
       final response = await http.get(ApiUrls.joke);
