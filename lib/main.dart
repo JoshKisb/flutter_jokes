@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jokes_app/pages/home/home.dart';
+import 'package:jokes_app/pages/jokes/jokes.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,6 +12,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int _selectedIndex = 0;
+
+  static final List<Widget> _pages = [HomePage(), JokesPage(), Container()];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +26,7 @@ class _MyAppState extends State<MyApp> {
           appBar: AppBar(
             title: Text("Dad Jokes App"),
           ),
-          body: HomePage(),
+          body: _pages.elementAt(_selectedIndex),
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
@@ -38,9 +42,13 @@ class _MyAppState extends State<MyApp> {
                 title: Text('Liked'),
               ),
             ],
-            currentIndex: 0,
+            currentIndex: _selectedIndex,
             selectedItemColor: Colors.amber[800],
-            onTap: (_) {},
+            onTap: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+            },
           ),
         ));
   }

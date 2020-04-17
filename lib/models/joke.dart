@@ -15,7 +15,7 @@ class Joke {
 
   factory Joke.fromJson(Map<String, dynamic> json) {
     return Joke(
-        id: json["id"],
+        id: json["id"] as int,
         type: json["type"],
         setup: json["setup"],
         punchline: json["punchline"]);

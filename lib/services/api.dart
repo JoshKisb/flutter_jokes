@@ -18,11 +18,11 @@ class ApiService {
 
   Future<List<Joke>> fetchJokes([String category]) async {
     String url =
-        category != null ? ApiUrls.jokes : ApiUrls.jokesOfType(category);
+        category == null ? ApiUrls.jokes : ApiUrls.jokesOfType(category);
 
     try {
-      final response = await http.get(url);
-      List<Map<String, dynamic>> jsonResponse = json.decode(response.body);
+      final response = await http.get(url);      
+      List<dynamic> jsonResponse = json.decode(response.body);
       return jsonResponse.map((jsonJoke) => Joke.fromJson(jsonJoke)).toList();
     } catch (e) {
       print(e);
