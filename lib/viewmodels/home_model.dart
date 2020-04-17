@@ -17,7 +17,7 @@ class HomeModel with ChangeNotifier {
   String error;
 
   initModel() {
-    loadJokeFromApi();
+    if (joke == null) loadJokeFromApi();
   }
 
   void loadJokeFromApi() {

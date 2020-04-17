@@ -6,9 +6,6 @@ import 'package:provider/provider.dart';
 class JokesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<JokesModel>(
-      create: (_) => JokesModel(),
-      child: JokeListWidget(),
-    );
+    return JokeListWidget(Provider.of<JokesModel>(context));
   }
 }

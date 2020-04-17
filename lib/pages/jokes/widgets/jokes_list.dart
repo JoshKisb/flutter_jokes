@@ -4,6 +4,9 @@ import 'package:jokes_app/viewmodels/jokes_model.dart';
 import 'package:provider/provider.dart';
 
 class JokeListWidget extends StatefulWidget {
+  final JokesModel model;
+  JokeListWidget(this.model);
+
   @override
   _JokeListWidgetState createState() => _JokeListWidgetState();
 }
@@ -11,15 +14,13 @@ class JokeListWidget extends StatefulWidget {
 class _JokeListWidgetState extends State<JokeListWidget> {
   @override
   void initState() {
-    final model = Provider.of<JokesModel>(context, listen: false);
-    model.initModel();
+    widget.model.initModel();
     super.initState();
   }
 
   @override
-  Widget build(BuildContext context) {
-    final model = Provider.of<JokesModel>(context);
-    return Container(child: buildJokeList(model));
+  Widget build(BuildContext context) {    
+    return Container(child: buildJokeList(widget.model));
   }
 
   buildJokeList(JokesModel model) {

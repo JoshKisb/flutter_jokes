@@ -17,7 +17,7 @@ class JokesModel with ChangeNotifier {
   String error;
 
   initModel() {
-    loadJokesFromApi();
+    if (_jokes == null) loadJokesFromApi();
   }
 
   void loadJokesFromApi() {
@@ -32,11 +32,10 @@ class JokesModel with ChangeNotifier {
     });
   }
 
-  // TODO: change this to add more to existing list 
+  // TODO: change this to add more to existing list
   void getJokes() {
     _viewState = ViewState.loading;
     notifyListeners();
     loadJokesFromApi();
   }
-
 }

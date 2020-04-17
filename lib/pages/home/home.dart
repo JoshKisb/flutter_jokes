@@ -15,9 +15,7 @@ class HomePage extends StatelessWidget {
             "Random",
             style: Theme.of(context).textTheme.headline1,
           ),
-          ChangeNotifierProvider<HomeModel>(
-              create: (_) => HomeModel(), 
-              child: RandomJokeWidget()),
+          RandomJokeWidget(Provider.of<HomeModel>(context)),
         ],
       ),
     );
