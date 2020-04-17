@@ -18,7 +18,7 @@ class ApiService {
 
   Future<List<Joke>> fetchJokes([String category]) async {
     String url =
-        (category == null) ? ApiUrls.jokes : ApiUrls.jokesOfType(category);
+        category != null ? ApiUrls.jokes : ApiUrls.jokesOfType(category);
 
     try {
       final response = await http.get(url);
