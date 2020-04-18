@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jokes_app/pages/jokes/widgets/joke_item.dart';
 import 'package:jokes_app/viewmodels/jokes_model.dart';
-import 'package:provider/provider.dart';
 
 class JokeListWidget extends StatefulWidget {
   final JokesModel model;
@@ -19,7 +18,7 @@ class _JokeListWidgetState extends State<JokeListWidget> {
   }
 
   @override
-  Widget build(BuildContext context) {    
+  Widget build(BuildContext context) {
     return Container(child: buildJokeList(widget.model));
   }
 

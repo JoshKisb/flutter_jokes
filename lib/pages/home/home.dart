@@ -15,7 +15,9 @@ class HomePage extends StatelessWidget {
             "Random",
             style: Theme.of(context).textTheme.headline1,
           ),
-          RandomJokeWidget(Provider.of<HomeModel>(context)),
+          Consumer<HomeModel>(
+            builder: (_, model, __) => RandomJokeWidget(model),
+          ),
         ],
       ),
     );

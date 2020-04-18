@@ -48,10 +48,10 @@ class _MyAppState extends State<MyApp> {
           icon: Icon(Icons.list),
           title: Text('All'),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
-          title: Text('Liked'),
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.favorite),
+        //   title: Text('Liked'),
+        // ),
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.amber[800],

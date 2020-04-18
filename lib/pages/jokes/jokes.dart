@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 class JokesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return JokeListWidget(Provider.of<JokesModel>(context));
+    return Consumer<JokesModel>(
+      builder: (_, model, __) => JokeListWidget(model),
+    );
   }
 }
